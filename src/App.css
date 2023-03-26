@@ -29,9 +29,15 @@ input {
   outline: none;
   border: none;
 }
-
+.listContainer {
+  width: 100%;
+}
 .list {
   padding: 3px;
-  margin-top: 20px;
+  margin-top: 5px;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }

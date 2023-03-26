@@ -1,13 +1,22 @@
 import React from "react";
-import { ListGroup, ListGroupItem } from "react-bootstrap";
+import { Button, ListGroup, ListGroupItem } from "react-bootstrap";
 
-function List({ data }) {
+function List({ data, handleDeleteList }) {
   return (
     <>
       {" "}
-      <ListGroup>
+      <ListGroup className="listContainer">
         {data.map((item, i) => (
-          <ListGroupItem>{item}</ListGroupItem>
+          <ListGroupItem className="list">
+            {item}
+
+            <Button
+              variant="danger"
+              size="sm"
+              onClick={() => handleDeleteList(i)}>
+              Delete
+            </Button>
+          </ListGroupItem>
         ))}
       </ListGroup>
     </>

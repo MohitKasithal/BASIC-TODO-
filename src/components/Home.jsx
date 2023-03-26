@@ -15,6 +15,10 @@ function Home() {
       setValue("");
     }
   }
+  function handleDeleteList(index) {
+    const newTodo = todo.filter((item, i) => i !== index); // create a new array without the item at the given index
+    setTodo(newTodo); // update the todo state with the new array
+  }
   return (
     <>
       <div className="home">
@@ -32,7 +36,7 @@ function Home() {
           </form>
         </div>
         <div className="list">
-          <List data={todo} />
+          <List data={todo} handleDeleteList={handleDeleteList} />
         </div>
       </div>
     </>
